@@ -1,4 +1,4 @@
-package com.example.kaj75.helloworld;
+package com.example.kaj75.fieldapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

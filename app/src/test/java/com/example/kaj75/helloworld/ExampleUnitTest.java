@@ -1,4 +1,4 @@
-package com.example.kaj75.helloworld;
+package com.example.kaj75.fieldapp;
 
 import org.junit.Test;
 
