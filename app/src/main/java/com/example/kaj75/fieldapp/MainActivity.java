@@ -41,4 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void login(View view) {
+        findViewById(R.id.loginContainer).setVisibility(View.GONE);
+        findViewById(R.id.messageContainer).setVisibility(View.VISIBLE);
+    }
 }

@@ -130,6 +130,7 @@
                     android:orientation="horizontal"
                     android:id="@+id/btnLogin"
                     android:clickable="true"
+                    android:onClick="login"
                     android:background="@drawable/submit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

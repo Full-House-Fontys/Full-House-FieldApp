@@ -21,6 +21,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/login_main" />
+    <include layout="@layout/login_main"
+        android:id="@+id/loginContainer"
+        android:visibility="visible"/>
+
+    <include layout="@layout/message_main"
+        android:id="@+id/messageContainer"
+        android:visibility="gone"/>
 
 </android.support.design.widget.CoordinatorLayout>
