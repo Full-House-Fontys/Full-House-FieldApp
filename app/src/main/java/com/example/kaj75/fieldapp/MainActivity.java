@@ -11,6 +11,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    MessageHandler messageHandler = new MessageHandler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,5 +47,10 @@ public class MainActivity extends AppCompatActivity {
     public void login(View view) {
         findViewById(R.id.loginContainer).setVisibility(View.GONE);
         findViewById(R.id.messageContainer).setVisibility(View.VISIBLE);
+    }
+
+    public void sendMessage(View view){
+        messageHandler.sendMessageUser(this, "Dikke BMW");
+        messageHandler.sendMessageCentralPoint(this, "Dunne BMW");
     }
 }

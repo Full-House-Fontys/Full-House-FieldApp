@@ -42,93 +42,107 @@
                 android:layout_weight="1"></LinearLayout>
 
         </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.7"
-            android:background="@color/lightGrey">
 
-            <!-- Dit stuk code moet autogegenereerd worden
-                Dit is een bericht format van de app-gebruiker -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent" android:layout_height="fill_parent"
+            android:layout_weight="0.7">
+
+            <!--<LinearLayout
+                android:id="@+id/messageBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">-->
+
                 <LinearLayout
+                    android:id="@+id/messageBox"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"></LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.7">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/textmessageUser"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="5dp"
-                        android:text="Ik heb versterking nodig!"/>
-                </LinearLayout>
-            </LinearLayout>
-            <!-- end auto gen -->
+                    android:paddingTop="5dp"
+                    android:background="@color/lightGrey">
 
-
-            <!-- Dit stuk code moet autogegenereerd worden
-               Dit is een bericht format van de centrale dienst -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.7">
-
-                    <TextView
+                    <!-- Dit stuk code moet autogegenereerd worden
+                        Dit is een bericht format van de app-gebruiker -->
+                    <!--<LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/textmessageCentral"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="5dp"
-                        android:text="Wat voor versterking?"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"></LinearLayout>
-            </LinearLayout>
-            <!-- end auto gen -->
+                        android:layout_marginBottom="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"></LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.7">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/textmessage_user"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="5dp"
+                                android:text="Ik heb versterking nodig!"/>
+                        </LinearLayout>
+                    </LinearLayout>-->
+                    <!-- end auto gen -->
 
-            <!-- Dit stuk code moet autogegenereerd worden
-                Dit is een bericht format van de app-gebruiker -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"></LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.7">
-                    <TextView
+
+                    <!-- Dit stuk code moet autogegenereerd worden
+                       Dit is een bericht format van de centrale dienst -->
+                    <!--<LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/textmessageUser"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="5dp"
-                        android:text="Twee extra politie agenten, een nieuwe brandweerwagen en een EHBO set. Het is dringend!"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.7">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/textmessage_central"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="5dp"
+                                android:text="Wat voor versterking?"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"></LinearLayout>
+                    </LinearLayout>-->
+                    <!-- end auto gen -->
+
+                    <!-- Dit stuk code moet autogegenereerd worden
+                        Dit is een bericht format van de app-gebruiker -->
+                    <!--<LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"></LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.7">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/textmessage_user"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="5dp"
+                                android:text="Twee extra politie agenten, een nieuwe brandweerwagen en een EHBO set. Het is dringend!"/>
+                        </LinearLayout>
+                    </LinearLayout>-->
+                    <!-- end auto gen -->
                 </LinearLayout>
-            </LinearLayout>
-            <!-- end auto gen -->
-        </LinearLayout>
+            <!--</LinearLayout>-->
+        </ScrollView>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -145,10 +159,25 @@
                     android:layout_height="match_parent" />
             </LinearLayout>
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.5">
 
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"></LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnSendMessage"
+                    android:clickable="true"
+                    android:onClick="sendMessage"
+                    android:background="@drawable/submit"
+                    android:layout_weight="1"></LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
