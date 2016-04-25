@@ -9,9 +9,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 public class MainActivity extends AppCompatActivity {
+
+    Client client;
+    LinearLayout loginButton;
 
     MessageHandler messageHandler = new MessageHandler();
     ScrollView scrollView;
@@ -23,7 +27,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //werkt misschien?
+        client = new Client();
+        loginButton = (LinearLayout) findViewById(R.id.btnLogin);
 
+        /*loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login(v);
+            }
+        });
+*/
         scrollView = (ScrollView) findViewById(R.id.scrollView);
     }
 
@@ -50,8 +63,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
-        findViewById(R.id.loginContainer).setVisibility(View.GONE);
-        findViewById(R.id.messageContainer).setVisibility(View.VISIBLE);
+        EditText editTextUser = (EditText) findViewById(R.id.etUsername);
+        EditText editTextPass = (EditText) findViewById(R.id.etPassword);
+        String userString = editTextUser.getText().toString();
+        String passString = editTextUser.getText().toString();
+        client.login(userString, passString);
+        while(client.getIsUser() == -1){
+
+        }
+        if(client.getIsUser() == 1) {
+            findViewById(R.id.loginContainer).setVisibility(View.GONE);
+            findViewById(R.id.messageContainer).setVisibility(View.VISIBLE);
+        }
+        else {
+            editTextPass.setText("");
+            editTextUser.setText("");
+        }
     }
 
     public void sendMessage(View view){
