@@ -49,46 +49,54 @@ public class MessageHandler {
         // specifying vertical orientation
         containerLayout.setOrientation(LinearLayout.VERTICAL);
         // creating LayoutParams
-        LinearLayout.LayoutParams linLayoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams containerLayoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         //Setting margin bot
-        linLayoutParam.bottomMargin = 10;
+        containerLayoutParam.bottomMargin = 10;
         //Adding layout params to the layout
-        containerLayout.setLayoutParams(linLayoutParam);
+        containerLayout.setLayoutParams(containerLayoutParam);
 
         //Creating filler layout
         LinearLayout fillerLayout = new LinearLayout(act);
+        Drawable backgroundTest = act.getResources().getDrawable( R.drawable.submit );
+        fillerLayout.setBackgroundDrawable(backgroundTest);
         // specifying vertical orientation
         fillerLayout.setOrientation(LinearLayout.VERTICAL);
         // creating LayoutParams
-        linLayoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        LinearLayout.LayoutParams fillerLayoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
         //Setting layout weight
-        linLayoutParam.weight = 2;
+        fillerLayoutParam.weight = 2;
         //Adding layout params to the layout
-        fillerLayout.setLayoutParams(linLayoutParam);
+        fillerLayout.setLayoutParams(fillerLayoutParam);
 
         //Creating message layout
         LinearLayout messageLayout = new LinearLayout(act);
         // specifying vertical orientation
         messageLayout.setOrientation(LinearLayout.VERTICAL);
+        // creating LayoutParams
+        LinearLayout.LayoutParams messageLayoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        //Setting margin left
+        messageLayoutParam.leftMargin = 40;
         //Setting layout weight
-        linLayoutParam.weight = 0.7f;
+        messageLayoutParam.weight = 0.7f;
         //Adding layout params to the layout
-        messageLayout.setLayoutParams(linLayoutParam);
+        messageLayout.setLayoutParams(messageLayoutParam);
 
         //Creating textview
         TextView textView = new TextView(act);
         textView.setText(message);
         Drawable background = act.getResources().getDrawable( R.drawable.textmessage_user );
         textView.setBackgroundDrawable(background);
-        linLayoutParam.leftMargin = 20;
-        linLayoutParam.rightMargin = 20;
-        linLayoutParam.topMargin = 5;
-        textView.setLayoutParams(linLayoutParam);
-        messageLayout.addView(textView);
+        // creating LayoutParams
+        LinearLayout.LayoutParams messageBubbleLayoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        messageBubbleLayoutParam.leftMargin = 20;
+        messageBubbleLayoutParam.rightMargin = 20;
+        messageBubbleLayoutParam.topMargin = 5;
+        textView.setLayoutParams(messageBubbleLayoutParam);
+        messageLayout.addView(textView, messageBubbleLayoutParam);
 
         //Adding layouts to the containerLayout
-        containerLayout.addView(fillerLayout);
-        containerLayout.addView(messageLayout);
+        //containerLayout.addView(fillerLayout, fillerLayoutParam);
+        containerLayout.addView(messageLayout, messageBubbleLayoutParam);
 
         //Adding message to the messageBox
         LinearLayout messageView = (LinearLayout) act.findViewById(R.id.messageBox);
@@ -150,6 +158,8 @@ public class MessageHandler {
         LinearLayout messageLayout = new LinearLayout(act);
         // specifying vertical orientation
         messageLayout.setOrientation(LinearLayout.VERTICAL);
+        //Setting margin right
+        linLayoutParam.rightMargin = 40;
         //Setting layout weight
         linLayoutParam.weight = 0.7f;
         //Adding layout params to the layout

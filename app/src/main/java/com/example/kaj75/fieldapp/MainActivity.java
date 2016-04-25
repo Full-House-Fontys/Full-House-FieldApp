@@ -8,10 +8,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.ScrollView;
 
 public class MainActivity extends AppCompatActivity {
 
     MessageHandler messageHandler = new MessageHandler();
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //werkt misschien?
+
+        scrollView = (ScrollView) findViewById(R.id.scrollView);
     }
 
     @Override
@@ -50,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendMessage(View view){
-        messageHandler.sendMessageUser(this, "Dikke BMW");
-        messageHandler.sendMessageCentralPoint(this, "Dunne BMW");
+        EditText editText = (EditText) findViewById(R.id.messageTextBox);
+        String message = editText.getText().toString();
+        editText.setText("");
+        messageHandler.sendMessageUser(this, message);
+        messageHandler.sendMessageCentralPoint(this, "...");
+
+        scrollView.fullScroll(View.FOCUS_DOWN);
     }
 }

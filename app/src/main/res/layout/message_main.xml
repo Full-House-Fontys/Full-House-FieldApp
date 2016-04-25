@@ -44,6 +44,7 @@
         </LinearLayout>
 
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/scrollView"
             android:layout_width="fill_parent" android:layout_height="fill_parent"
             android:layout_weight="0.7">
 
@@ -62,7 +63,7 @@
 
                     <!-- Dit stuk code moet autogegenereerd worden
                         Dit is een bericht format van de app-gebruiker -->
-                    <!--<LinearLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp">
@@ -83,7 +84,7 @@
                                 android:paddingTop="5dp"
                                 android:text="Ik heb versterking nodig!"/>
                         </LinearLayout>
-                    </LinearLayout>-->
+                    </LinearLayout>
                     <!-- end auto gen -->
 
 
@@ -155,6 +156,7 @@
                 android:layout_weight="0.7">
 
                 <EditText
+                    android:id="@+id/messageTextBox"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
