@@ -184,4 +184,9 @@ public class MessageHandler {
         LinearLayout messageView = (LinearLayout) act.findViewById(R.id.messageBox);
         messageView.addView(containerLayout);
     }
+
+    public void clearMessages(Activity act){
+        LinearLayout messageView = (LinearLayout) act.findViewById(R.id.messageBox);
+        messageView.removeAllViews();
+    }
 }
