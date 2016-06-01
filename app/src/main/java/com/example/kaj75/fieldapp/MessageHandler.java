@@ -19,26 +19,26 @@ public class MessageHandler {
      * Generates a message block for the user.
      * Format:
      <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:layout_marginBottom="10dp">
-     <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:layout_weight="2"></LinearLayout>
-     <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:layout_weight="0.7">
-     <TextView
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:background="@drawable/textmessageUser"
-     android:paddingLeft="20dp"
-     android:paddingRight="20dp"
-     android:paddingTop="5dp"
-     android:text="Ik heb versterking nodig!"/>
-     </LinearLayout>
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="10dp">
+        <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="2"></LinearLayout>
+        <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="0.7">
+             <TextView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@drawable/textmessageUser"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="5dp"
+             android:text="Ik heb versterking nodig!"/>
+         </LinearLayout>
      </LinearLayout>
      * @param act : current activity
      * @param message : the message that needs to be displayed
@@ -107,26 +107,26 @@ public class MessageHandler {
      * Generates a message block for the user.
      * Format:
      <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:layout_marginBottom="5dp">
-     <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:layout_weight="0.7">
-     <TextView
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:background="@drawable/textmessage_central"
-     android:paddingLeft="20dp"
-     android:paddingRight="20dp"
-     android:paddingTop="5dp"
-     android:text="Wat voor versterking?"/>
-     </LinearLayout>
-     <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:layout_weight="2"></LinearLayout>
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="5dp">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="0.7">
+             <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@drawable/textmessage_central"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:paddingTop="5dp"
+             android:text="Wat voor versterking?"/>
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="2"></LinearLayout>
      </LinearLayout>-->
      * @param act : current activity
      * @param message : the message that needs to be displayed
