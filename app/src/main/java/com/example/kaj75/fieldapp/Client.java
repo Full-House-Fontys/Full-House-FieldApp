@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -21,8 +23,9 @@ public class Client {
     int dstPort;
     String response = "";
     TextView textResponse;
-    private String ip = "145.93.173.123";
-    private int isUser = -1;
+    private String ip = "192.168.1.101";
+    private int isOnMission = -1;
+    private ArrayList<String> lastMessages;
 
     static final int socketServerPORT = 8080;
 
@@ -30,11 +33,20 @@ public class Client {
     private ServerSocket socket;
     private Thread check;
 
-    public int getIsUser() {
-        return isUser;
+    public int getIsOnMission() {
+        return isOnMission;
+    }
+
+    public void setLastMessages(ArrayList<String> lastMessages) {
+        this.lastMessages = lastMessages;
+    }
+
+    public ArrayList<String> getLastMessages() {
+        return lastMessages;
     }
 
     Client(){
+        lastMessages = new ArrayList<>();
         try {
             startListeners();
         } catch (IOException e) {
@@ -72,12 +84,10 @@ public class Client {
         //stopListeners();
 
         // Initialize all variables
-        if(messageQueue == null) {
-            messageQueue = new ConcurrentLinkedQueue<CommunicationMessage>();
-        }
-        if(socket == null) {
-            socket = new ServerSocket(socketServerPORT);
-        }
+
+        messageQueue = new ConcurrentLinkedQueue<CommunicationMessage>();
+        socket = new ServerSocket(socketServerPORT);
+
         // Create runnable
         check = new Thread(new Runnable(){
             @Override
@@ -124,23 +134,34 @@ public class Client {
 
     private void listen() {
         while (true) {
-            CommunicationMessage communicationMessage = consumeRequest();
+            CommunicationRequest communicationRequest = consumeRequest();
 
-            if (communicationMessage != null)
-                handle(communicationMessage);
+            if (communicationRequest != null)
+                handle(communicationRequest);
         }
     }
 
-    private void handle(CommunicationMessage communicationMessage){
-        switch (communicationMessage.getText()){
-            case "true":
-                isUser = 1;
+    private void handle(CommunicationRequest communicationRequest){
+        switch (communicationRequest.getUrl()){
+            case "login":
+                if(communicationRequest.getPayload().equals("-1")) {
+                    isOnMission = 0;
+                }else {
+                    isOnMission = Integer.parseInt(communicationRequest.getPayload());
+                }
                 break;
-            case "false":
-                isUser = 0;
+            case "getMessages":
+                //last 5 messages
+                ArrayList<String> newMessages = new ArrayList<>();
+                newMessages.addAll(new ArrayList<String>(Arrays.asList(communicationRequest.getPayload().split("///"))));
+                for(String newString : newMessages){
+                    if(!lastMessages.contains(newString)){
+                        lastMessages.add(newString);
+                    }
+                }
                 break;
             default:
-                System.out.println(communicationMessage.getText());
+                System.out.println(communicationRequest.getUrl()+communicationRequest.getPayload());
         }
     }
 
@@ -148,10 +169,10 @@ public class Client {
      * Gets the latest network message as a request type
      * @return The latest network request if there is one
      */
-    private CommunicationMessage consumeRequest() {
+    private CommunicationRequest consumeRequest() {
         CommunicationMessage communicationMessage = consumeMessage();
         if (communicationMessage != null)
-            return communicationMessage;
+            return new CommunicationRequest(communicationMessage);
         else
             return null;
     }
@@ -181,6 +202,15 @@ public class Client {
     }
 
     public void login(String userString, String passString) {
-        send("login/"+userString+":"+passString, "145.93.173.123");
+        send("login/"+userString+":"+passString, ip);
+        //send("requestBackup/"+"vuur:snel:0:0:3:0:4", ip);
+    }
+
+    public void getMessage() {
+        send("getMessages/", ip);
+    }
+
+    public void sendMessage(String message) {
+        send("sendMessage/"+message+isOnMission, ip);
     }
 }

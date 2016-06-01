@@ -78,19 +78,6 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2.5">
 
-                    <TextView
-                        android:layout_weight="3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center|left"
-                        android:textSize="20dp"
-                        android:text="Team Nr"/>
-                    <EditText
-                        android:layout_marginRight="200dp"
-                        android:id="@+id/etTeamNumber"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -116,7 +103,8 @@
                                 android:gravity="center|left"
                                 android:text="Aantal Politie"/>
                             <EditText
-                                android:layout_marginTop="18dp"
+                                android:text="0"
+                                android:layout_marginTop="15dp"
                                 android:layout_marginBottom="18dp"
                                 android:layout_marginRight="25dp"
                                 android:id="@+id/etPolice"
@@ -136,7 +124,8 @@
                                 android:gravity="center|left"
                                 android:text="Aantal Brandweer"/>
                             <EditText
-                                android:layout_marginTop="18dp"
+                                android:text="0"
+                                android:layout_marginTop="15dp"
                                 android:layout_marginBottom="18dp"
                                 android:layout_marginRight="25dp"
                                 android:id="@+id/etFireman"
@@ -163,7 +152,8 @@
                                 android:gravity="center|left"
                                 android:text="Aantal EHBO"/>
                             <EditText
-                                android:layout_marginTop="18dp"
+                                android:text="0"
+                                android:layout_marginTop="15dp"
                                 android:layout_marginBottom="18dp"
                                 android:layout_marginRight="25dp"
                                 android:id="@+id/etMedics"
@@ -183,7 +173,8 @@
                                 android:gravity="center|left"
                                 android:text="Aantal Militairen"/>
                             <EditText
-                                android:layout_marginTop="18dp"
+                                android:text="0"
+                                android:layout_marginTop="15dp"
                                 android:layout_marginBottom="18dp"
                                 android:layout_marginRight="25dp"
                                 android:id="@+id/etMilitairePolice"
