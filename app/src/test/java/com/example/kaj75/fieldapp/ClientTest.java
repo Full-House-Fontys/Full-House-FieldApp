@@ -24,7 +24,7 @@ public class ClientTest {
 
     @org.junit.Test
     public void testGetIsUser() throws Exception {
-        Assert.assertEquals("User is not -1", -1, client.getIsUser());
+        Assert.assertEquals("User is not -1", -1, client.getIsOnMission());
     }
 
     @org.junit.Test

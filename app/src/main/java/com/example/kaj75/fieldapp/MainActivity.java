@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
             if(isLoggedIn){
                 //TODO navigate right
                 findViewById(R.id.loginContainer).setVisibility(View.GONE);
-                findViewById(R.id.messageContainer).setVisibility(View.GONE);
+                findViewById(R.id.messageContainer).setVisibility(View.VISIBLE);
+                findViewById(R.id.teamContainer).setVisibility(View.GONE);
             }
             return true;
         }
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 //TODO navigate right
                 findViewById(R.id.loginContainer).setVisibility(View.GONE);
                 findViewById(R.id.messageContainer).setVisibility(View.GONE);
+                findViewById(R.id.teamContainer).setVisibility(View.VISIBLE);
             }
             return true;
         }
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             //TODO navigate right
             findViewById(R.id.loginContainer).setVisibility(View.VISIBLE);
             findViewById(R.id.messageContainer).setVisibility(View.GONE);
+            findViewById(R.id.teamContainer).setVisibility(View.GONE);
             isLoggedIn = false;
             return true;
         }

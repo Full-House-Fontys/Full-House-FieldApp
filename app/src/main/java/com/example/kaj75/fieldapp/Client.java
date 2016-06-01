@@ -23,7 +23,7 @@ public class Client {
     int dstPort;
     String response = "";
     TextView textResponse;
-    private String ip = "192.168.1.101";
+    private String ip = "145.93.172.205";
     private int isOnMission = -1;
     private ArrayList<String> lastMessages;
 
