@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_message) {
             if(isLoggedIn){
-                //TODO navigate right
                 findViewById(R.id.loginContainer).setVisibility(View.GONE);
                 findViewById(R.id.messageContainer).setVisibility(View.VISIBLE);
                 findViewById(R.id.teamContainer).setVisibility(View.GONE);
@@ -76,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         }
         if (id == R.id.action_team) {
             if(isLoggedIn){
-                //TODO navigate right
                 findViewById(R.id.loginContainer).setVisibility(View.GONE);
                 findViewById(R.id.messageContainer).setVisibility(View.GONE);
                 findViewById(R.id.teamContainer).setVisibility(View.VISIBLE);
@@ -84,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_log_out) {
-            //TODO navigate right
             findViewById(R.id.loginContainer).setVisibility(View.VISIBLE);
             findViewById(R.id.messageContainer).setVisibility(View.GONE);
             findViewById(R.id.teamContainer).setVisibility(View.GONE);
@@ -126,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
                 getMessages();
                 findViewById(R.id.loginContainer).setVisibility(View.GONE);
                 findViewById(R.id.messageContainer).setVisibility(View.VISIBLE);
+                findViewById(R.id.teamContainer).setVisibility(View.GONE);
+                isLoggedIn = true;
                 fillMessageBox();
             } else {
                 editTextPass.setText("");
